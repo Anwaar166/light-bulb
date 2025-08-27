@@ -1,0 +1,266 @@
+.image {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  position: relative;
+  margin: 0 auto;
+  background: radial-gradient(circle at center, #1e1e1ebd, #000000 80%);
+  border-radius: 2rem;
+
+}
+
+.bulb1 {
+  position: absolute;
+  bottom: 30.35px;
+  height: 200px;
+  width: 200px;
+
+
+}
+
+.main-shadowBox {
+  width: 300px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: 25px;
+  margin: 0 auto;
+}
+
+.shadow {
+  width: 60px;
+  height: 20px;
+  position: absolute;
+  border-radius: 50%;
+
+}
+
+.shodwToggle {
+  background-color: #949494;
+  filter: blur(2px);
+  opacity: .4;
+  animation: shadow 1s ease-out;
+
+}
+
+@keyframes shadow {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: .4;
+
+  }
+}
+
+.buttonBox {
+  width: 300px;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#button {
+  font-size: 22px;
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 2rem;
+  padding: .5rem;
+  color: white;
+  background: radial-gradient(#1e1e1eb0, #000000ec 80%);
+}
+
+.colorChoose {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 40px;
+  position: relative;
+  bottom: 170px;
+  left: 120px;
+  height: 100px;
+  background: linear-gradient(rgba(255, 255, 255, 0.103));
+  border-radius: 2rem;
+
+  margin: 0 auto;
+}
+
+.colorBox {
+  width: 20px;
+  height: 20px;
+  transition: all .5s ease-out;
+}
+
+.colorBox:hover {
+  transform: scale(.8);
+}
+
+.whiteBox {
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+}
+
+.redBox {
+  background-color: red;
+  border-radius: 50%;
+}
+
+.greenBox {
+  background-color: green;
+  border-radius: 50%;
+}
+
+.yellowBox {
+  background-color: yellow;
+  border-radius: 50%;
+}
+/* Main work for upper light which acutally glows start here incluind RGB */
+
+.bulb2 {
+  width: 200px;
+  height: 150px;
+  background: rgb(255, 255, 255);
+  border-radius: 100px 100px 0 0;
+  position: absolute;
+  top: 19.80px;
+
+}
+
+.bulb2Opacity {
+  filter: opacity(.7);
+
+}
+
+.bulb2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 100px 100px 0 0;
+  pointer-events: none;
+}
+
+.bulb2.white::before {
+  content: "";
+  box-shadow:
+    -3px -8px 26px rgba(255, 255, 255, 1),
+    2px -1px 19px rgba(255, 255, 200, 0.9),
+    0 0 15px rgba(255, 255, 150, 0.8);
+  animation: whiteGlow .85s 1 ease-in-out;
+
+}
+
+
+@keyframes whiteGlow {
+  from {
+    box-shadow:
+      -3px -8px 16px rgba(255, 255, 255, 0.5),
+      2px -1px 9px rgba(255, 255, 200, 0.4),
+      0 0 5px rgba(255, 255, 150, 0.3);
+  }
+
+  to {
+    box-shadow:
+      -3px -8px 26px rgba(255, 255, 255, 1),
+      2px -1px 19px rgba(255, 255, 200, 0.9),
+      0 0 15px rgba(255, 255, 150, 0.8);
+  }
+}
+
+
+
+
+.red::before {
+  background: radial-gradient(circle at center, #ff4d4d 0%, #cc0000 70%, #800000 100%);
+  box-shadow:
+    0 0 20px rgba(255, 77, 77, 0.8),
+    0 0 40px rgba(255, 50, 50, 0.6),
+    0 0 60px rgba(255, 0, 0, 0.4);
+  animation: redGlow .85s 1 ease-in-out;
+
+}
+
+
+@keyframes redGlow {
+  from {
+    box-shadow:
+      -3px -8px 16px rgba(194, 5, 5, 0.5),
+      2px -1px 9px rgba(255, 200, 200, 0.4),
+      0 0 5px rgba(255, 150, 150, 0.3);
+  }
+
+  to {
+    box-shadow:
+      0 0 20px rgba(255, 77, 77, 0.8),
+      0 0 40px rgba(255, 50, 50, 0.6),
+      0 0 60px rgba(255, 0, 0, 0.4);
+  }
+}
+
+.green::before {
+  background: radial-gradient(circle at center, #4dff4d 0%, #00cc1b 70%, #008006 100%);
+  box-shadow:
+    0 0 20px rgba(0, 231, 19, 0.8),
+    0 0 40px rgba(50, 255, 50, 0.6),
+    0 0 60px rgba(123, 255, 0, 0.4);
+
+  animation: greenGlow .85s 1 ease-in-out;
+
+}
+
+
+@keyframes greenGlow {
+  from {
+    box-shadow:
+      -3px -8px 16px rgba(122, 219, 11, 0.5),
+      2px -1px 9px rgba(85, 247, 21, 0.4),
+      0 0 5px rgba(71, 223, 11, 0.3);
+  }
+
+  to {
+    box-shadow:
+      0 0 20px rgba(0, 231, 19, 0.8),
+      0 0 40px rgba(50, 255, 50, 0.6),
+      0 0 60px rgba(123, 255, 0, 0.4);
+  }
+}
+
+.yellow::before {
+  background: radial-gradient(circle at center, #e4ff4d 0%, #c9cc00 70%, #778000 100%);
+  box-shadow:
+    0 0 20px rgba(216, 231, 0, 0.8),
+    0 0 40px rgba(224, 255, 50, 0.6),
+    0 0 60px rgba(255, 230, 0, 0.4);
+  animation: yeloowGlow .85s 1 ease-in-out;
+
+}
+
+
+@keyframes yeloowGlow {
+  from {
+    box-shadow:
+      -3px -8px 16px rgba(236, 233, 12, 0.5),
+      2px -1px 9px rgba(224, 221, 6, 0.4),
+      0 0 5px rgba(235, 235, 9, 0.3);
+  }
+
+  to {
+    box-shadow:
+      0 0 20px rgba(216, 231, 0, 0.8),
+      0 0 40px rgba(224, 255, 50, 0.6),
+      0 0 60px rgba(255, 230, 0, 0.4);
+  }
+}
